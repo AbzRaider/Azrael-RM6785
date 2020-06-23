@@ -122,8 +122,6 @@ enum sched_tunable_scaling sysctl_sched_tunable_scaling = SCHED_TUNABLESCALING_L
  */
 unsigned int sysctl_sched_min_granularity = 1000000ULL;
 unsigned int normalized_sysctl_sched_min_granularity = 1000000ULL;
->>>>>>> f8970f74a972 (sched/fair: Tune the scheduler using Google's presets)
-
 /*
  * This value is kept at sysctl_sched_latency/sysctl_sched_min_granularity
  */
@@ -143,14 +141,8 @@ unsigned int sysctl_sched_child_runs_first __read_mostly = 1;
  *
  * (default: 1 msec * (1 + ilog(ncpus)), units: nanoseconds)
  */
-<<<<<<< HEAD
-unsigned int sysctl_sched_wakeup_granularity		= 5000000UL;
-unsigned int normalized_sysctl_sched_wakeup_granularity	= 5000000UL;
-=======
 unsigned int sysctl_sched_wakeup_granularity = 2000000UL;
 unsigned int normalized_sysctl_sched_wakeup_granularity = 2000000UL;
->>>>>>> f8970f74a972 (sched/fair: Tune the scheduler using Google's presets)
-
 const_debug unsigned int sysctl_sched_migration_cost	= 1000000UL;
 
 #ifdef CONFIG_SCHED_WALT
