@@ -102,7 +102,7 @@ static unsigned int FY_6785TTbl[NR_FREQ * NR_MT_CPU_DVFS][ARRAY_COL_SIZE] = {
 
 
 	/* L */
-	{ 2050, 115, 1, 1 },
+	{ 2200, 115, 1, 1 },
 	{ 1986, 111, 1, 1 },
 	{ 1923, 106, 1, 1 },
 	{ 1860, 102, 1, 1 },
@@ -122,7 +122,7 @@ static unsigned int FY_6785TTbl[NR_FREQ * NR_MT_CPU_DVFS][ARRAY_COL_SIZE] = {
 
 
 	/* CCI */
-	{ 1400, 101, 2, 1 },
+	{ 1500, 101, 2, 1 },
 	{ 1330, 95, 2, 1 },
 	{ 1260, 88, 2, 1 },
 	{ 1190, 81, 2, 1 },
