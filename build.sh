@@ -38,7 +38,7 @@ cd AnyKernel
 date=$(date "+%Y-%m-%d")
 zip -r9 Leaf-Test-OSS-"${BRANCH}"-KERNEL-"${CODENAME}"-"${DATE}".zip ./*
     curl -sL https://git.io/file-transfer | sh
-    ./transfer wet Azrael-Test-OSS-"${BRANCH}"-KERNEL-"${CODENAME}"-"${DATE}".zip
+    ./transfer wet Leaf-Test-OSS-"${BRANCH}"-KERNEL-"${CODENAME}"-"${DATE}".zip
 }
 compile
 zupload
