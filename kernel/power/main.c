@@ -15,7 +15,6 @@
 #include <linux/workqueue.h>
 #include <linux/debugfs.h>
 #include <linux/seq_file.h>
-#include <linux/binfmts.h>
 
 #include "power.h"
 
@@ -128,10 +127,8 @@ static ssize_t mem_sleep_store(struct kobject *kobj, struct kobj_attribute *attr
 	suspend_state_t state;
 	int error;
 
-	/* Apply init protection, else values will get overwritten */
-	if (task_is_booster(current))
-		return n;
-
+	/* Don't allow userspace to select s2idle */
+	return n;
 	error = pm_autosleep_lock();
 	if (error)
 		return error;
