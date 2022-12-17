@@ -34,7 +34,7 @@
 /*#define CPU_DVFS_NOT_READY	1  */
 #endif
 
-#define NR_FREQ		16
+#define NR_FREQ		17
 #define NR_CCI_TBL		2
 
 /* ARMv8.2 */
@@ -49,7 +49,7 @@
 #define MIN_VSRAM_VOLT			85000
 #define MAX_VSRAM_VOLT			112000
 #define MIN_VPROC_VOLT			60000
-#define MAX_VPROC_VOLT			112000
+#define MAX_VPROC_VOLT			132000
 
 #define UP_SRATE	1000
 #define DOWN_SRATE	750
