@@ -143,8 +143,8 @@
 #define CPU_DVFS_FREQ15_LL_6785T	500000		/* KHz */
 
 /* for DVFS OPP table B */
-#define CPU_DVFS_FREQ0_L_6785T		2050000		/* KHz */
-#define CPU_DVFS_FREQ1_L_6785T		1986000		/* KHz */
+#define CPU_DVFS_FREQ0_L_6785T		1966000		/* KHz */
+#define CPU_DVFS_FREQ1_L_6785T		1949000		/* KHz */
 #define CPU_DVFS_FREQ2_L_6785T		1923000		/* KHz */
 #define CPU_DVFS_FREQ3_L_6785T		1860000		/* KHz */
 #define CPU_DVFS_FREQ4_L_6785T		1796000		/* KHz */
@@ -521,7 +521,7 @@ static struct mt_cpu_freq_method opp_tbl_method_L_6785T[] = {	/* 6785T */
 	FP(2,	1),
 	FP(2,	1),
 	FP(2,	1),
-	FP(4,	1),
+	FP(2,	1),
 	FP(4,	1),
 };
 
