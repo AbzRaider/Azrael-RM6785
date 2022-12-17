@@ -521,7 +521,7 @@ static struct mt_cpu_freq_method opp_tbl_method_L_6785T[] = {	/* 6785T */
 	FP(2,	1),
 	FP(2,	1),
 	FP(2,	1),
-	FP(4,	1),
+	FP(2,	1),
 	FP(4,	1),
 };
 
