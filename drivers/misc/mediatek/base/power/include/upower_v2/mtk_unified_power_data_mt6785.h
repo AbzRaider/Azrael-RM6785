@@ -353,6 +353,8 @@ struct upower_tbl upower_tbl_cluster_l_6785T = {
 			.lkg_pwr = {0, 0, 0, 0, 0, 0} },
 		{.cap = 427, .volt = 103125, .dyn_pwr = 0,
 			.lkg_pwr = {0, 0, 0, 0, 0, 0} },
+		{.cap = 451, .volt = 107125, .dyn_pwr = 0,
+			.lkg_pwr = {0, 0, 0, 0, 0, 0} },
 	},
 	.lkg_idx = DEFAULT_LKG_IDX,
 	.row_num = UPOWER_OPP_NUM,
@@ -401,6 +403,8 @@ struct upower_tbl upower_tbl_b_6785T = {
 		.lkg_pwr = {374239, 374239, 374239, 374239, 374239, 374239} },
 		{.cap = 1024, .volt = 111875, .dyn_pwr = 847967,
 		.lkg_pwr = {392972, 392972, 392972, 392972, 392972, 392972} },
+		{.cap = 1124, .volt = 121875, .dyn_pwr = 851967,
+		.lkg_pwr = {401972, 401972, 401972, 401972, 401972, 401972} },
 	},
 	.lkg_idx = DEFAULT_LKG_IDX,
 	.row_num = UPOWER_OPP_NUM,
@@ -449,6 +453,8 @@ struct upower_tbl upower_tbl_cluster_b_6785T = {
 			.lkg_pwr = {0, 0, 0, 0, 0, 0} },
 		{.cap = 1024, .volt = 111875, .dyn_pwr = 0,
 			.lkg_pwr = {0, 0, 0, 0, 0, 0} },
+		{.cap = 1124, .volt = 111875, .dyn_pwr = 0,
+			.lkg_pwr = {0, 0, 0, 0, 0, 0} },
 	},
 	.lkg_idx = DEFAULT_LKG_IDX,
 	.row_num = UPOWER_OPP_NUM,
@@ -496,6 +502,8 @@ struct upower_tbl upower_tbl_cci_6785T = {
 		{.cap = 0, .volt = 99375, .dyn_pwr = 53332,
 			.lkg_pwr = {99423, 99423, 99423, 99423, 99423, 99423} },
 		{.cap = 0, .volt = 103125, .dyn_pwr = 60455,
+		.lkg_pwr = {107604, 107604, 107604, 107604, 107604, 107604} },
+		{.cap = 0, .volt = 106125, .dyn_pwr = 60455,
 		.lkg_pwr = {107604, 107604, 107604, 107604, 107604, 107604} },
 	},
 	.lkg_idx = DEFAULT_LKG_IDX,
@@ -752,6 +760,5 @@ struct upower_tbl upower_tbl_cci_6783 = {
 };
 
 #endif /* UNIFIED_POWER_DATA_H */
-
 
 
