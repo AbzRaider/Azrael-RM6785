@@ -314,14 +314,14 @@ static unsigned int gx_gpu_freq_avg;
 #ifdef GED_KPI_CPU_BOOST
 static int boost_accum_cpu;
 /* for non-GED_KPI_MAX_FPS-FPS cases */
-static long target_t_cpu_remained = 18600000;
+static long target_t_cpu_remained = 17600000;
 /* static long target_t_cpu_remained_min = 8300000; */
 /* default 0.5 vsync period */
 static int cpu_boost_policy=-1;
-static int boost_extra=1;
+static int boost_extra=0;
 static int boost_amp=-1;
 static int deboost_reduce;
-static int boost_upper_bound = 55;
+static int boost_upper_bound = 85;
 static void (*ged_kpi_cpu_boost_policy_fp)(struct GED_KPI_HEAD *psHead,
 	struct GED_KPI *psKPI);
 module_param(target_t_cpu_remained, long, 0644);
