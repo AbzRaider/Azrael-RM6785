@@ -7,7 +7,7 @@ source ~/.bashrc && source ~/.profile
 export LC_ALL=C && export USE_CCACHE=1
 ccache -M 100G
 export ARCH=arm64
-export KBUILD_BUILD_HOST=Anupam_Roy
+export KBUILD_BUILD_HOST=AbzRaider
 export KBUILD_BUILD_USER="Gorilla669"
 git clone --depth=1 https://gitlab.com/Panchajanya1999/azure-clang.git clang
 
