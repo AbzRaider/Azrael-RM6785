@@ -63,10 +63,10 @@ EXPORT_SYMBOL(ged_kpi_PushAppSelfFcFp_fbt);
 
 #define GED_KPI_MSEC_DIVIDER 1000000
 #define GED_KPI_SEC_DIVIDER 1000000000
-#define GED_KPI_MAX_FPS 60
+#define GED_KPI_MAX_FPS 91
 /* set default margin to be distinct from FPSGO(0 or 3) */
-#define GED_KPI_DEFAULT_FPS_MARGIN 4
-#define GED_KPI_CPU_MAX_OPP 0
+#define GED_KPI_DEFAULT_FPS_MARGIN 3
+#define GED_KPI_CPU_MAX_OPP 4
 
 
 #define GED_TIMESTAMP_TYPE_D    0x1
@@ -262,7 +262,7 @@ static unsigned int enable_cpu_boost = 1;
 #endif /* GED_KPI_CPU_BOOST */
 static unsigned int enable_gpu_boost = 1;
 static unsigned int is_GED_KPI_enabled = 1;
-static unsigned int ap_self_frc_detection_rate = 20;
+static unsigned int ap_self_frc_detection_rate = 30;
 #ifdef GED_ENABLE_FB_DVFS
 static unsigned int g_force_gpu_dvfs_fallback;
 static int g_fb_dvfs_threshold = 80;
@@ -296,7 +296,7 @@ static unsigned long long g_CRemTimeAccu; /*g_cpu_remained_time_accum*/
 static unsigned long long g_gpu_freq_accum;
 static unsigned int g_frame_count;
 
-static int gx_game_mode;
+static int gx_game_mode=0;
 static int gx_boost_on;
 #ifdef GED_KPI_CPU_BOOST
 static int gx_force_cpu_boost;
@@ -314,10 +314,10 @@ static unsigned int gx_gpu_freq_avg;
 #ifdef GED_KPI_CPU_BOOST
 static int boost_accum_cpu;
 /* for non-GED_KPI_MAX_FPS-FPS cases */
-static long target_t_cpu_remained = 16000000;
+static long target_t_cpu_remained = 15200000;
 /* static long target_t_cpu_remained_min = 8300000; */
 /* default 0.5 vsync period */
-static int cpu_boost_policy;
+static int cpu_boost_policy=-1;
 static int boost_extra;
 static int boost_amp;
 static int deboost_reduce;
