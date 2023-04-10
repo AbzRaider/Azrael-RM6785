@@ -6,7 +6,7 @@
 #include <linux/module.h>
 #include <linux/proc_fs.h>
 #include "../../../../include/soc/oppo/device_info.h"
-#include <../../../soc/oppo/oppo_project.h>
+#include <soc/oppo/oppo_project.h>
 #include <linux/slab.h>
 #include <linux/seq_file.h>
 #include <linux/fs.h>
