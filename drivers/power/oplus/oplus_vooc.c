@@ -35,7 +35,7 @@ extern int enable_charger_log;
 #define vooc_xlog_printk(num, fmt, ...) \
 	do { \
 		if (enable_charger_log >= (int)num) { \
-			pr_debug(KERN_NOTICE pr_fmt("[OPLUS_CHG][%s]"fmt), __func__, ##__VA_ARGS__);\
+			printk(KERN_NOTICE pr_fmt("[OPLUS_CHG][%s]"fmt), __func__, ##__VA_ARGS__);\
 	} \
 } while (0)
 
@@ -78,7 +78,7 @@ static bool oplus_vooc_is_battemp_exit(void)
 		return false;
 }
 
-void oplus_vooc_battery_update(void)
+void oplus_vooc_battery_update()
 {
 	struct oplus_vooc_chip *chip = g_vooc_chip;
 /*
@@ -831,7 +831,6 @@ static void oplus_vooc_fastchg_func(struct work_struct *work)
 			ret_info = 0x2;
 		}
 	} else if (data == VOOC_NOTIFY_FAST_ABSENT) {
-	/* Zhangkun@BSP.CHG.Basic, 2020/08/17, Add for svooc detect and detach */
 		chip->detach_unexpectly = true;
 		chip->fastchg_started = false;
 		chip->fastchg_to_normal = false;
@@ -896,7 +895,6 @@ static void oplus_vooc_fastchg_func(struct work_struct *work)
 	ret_info = 0x2;
 	} else if (data == VOOC_NOTIFY_ALLOW_READING_IIC) {
 		if(chip->fastchg_allow) {
-	/* Zhangkun@BSP.CHG.Basic, 2020/08/17, Add for svooc detect and detach */
 			chip->detach_unexpectly = false;
 			chip->fastchg_ing = true;
 			chip->allow_reading = true;
@@ -1339,14 +1337,13 @@ void fw_update_thread(struct work_struct *work)
 			chip->vops->fw_check_then_recover(chip);
 			return;
 		}
-/*		 do {
+		 do {
 			ret = request_firmware_select(&fw, chip->fw_path, chip->dev);
 			if (!ret) {
 				break;
 			}
 		} while((ret < 0) && (--retry > 0));
 		chg_debug(" retry times %d, chip->fw_path[%s]\n", 5 - retry, chip->fw_path);
-*/
 		if(!ret) {
 			chip->firmware_data =  fw->data;
 			chip->fw_data_count =  fw->size;
@@ -1492,7 +1489,6 @@ void oplus_vooc_init(struct oplus_vooc_chip *chip)
 {
 	int ret = 0;
 
-	/* Zhangkun@BSP.CHG.Basic, 2020/08/17, Add for svooc detect and detach */
 	chip->detach_unexpectly = false;
 	chip->allow_reading = true;
 	chip->fastchg_started = false;
@@ -1569,7 +1565,7 @@ bool oplus_vooc_wake_fastchg_work(struct oplus_vooc_chip *chip)
 {
 	return schedule_delayed_work(&chip->fastchg_work, 0);
 }
-/*
+
 void oplus_vooc_print_log(void)
 {
 	if (!g_vooc_chip) {
@@ -1579,7 +1575,7 @@ void oplus_vooc_print_log(void)
 		g_vooc_chip->fastchg_allow, g_vooc_chip->fastchg_started, g_vooc_chip->fastchg_dummy_started,
 		g_vooc_chip->fastchg_to_normal, g_vooc_chip->fastchg_to_warm, g_vooc_chip->btb_temp_over);
 }
-*/
+
 bool oplus_vooc_get_allow_reading(void)
 {
 	if (!g_vooc_chip) {
@@ -1675,7 +1671,7 @@ void oplus_vooc_set_fastchg_to_warm_false(void)
 	}
 }
 
-bool oplus_vooc_get_fastchg_low_temp_full(void)
+bool oplus_vooc_get_fastchg_low_temp_full()
 {
 	if (!g_vooc_chip) {
 		return false;
@@ -2023,7 +2019,6 @@ void oplus_vooc_reset_temp_range(struct oplus_vooc_chip *chip)
 }
 
 
-	/* Zhangkun@BSP.CHG.Basic, 2020/08/17, Add for svooc detect and detach */
 bool oplus_vooc_get_detach_unexpectly(void)
 {
 	if (!g_vooc_chip) {
