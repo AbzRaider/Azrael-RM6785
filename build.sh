@@ -37,7 +37,7 @@ cp out/arch/arm64/boot/Image.gz-dtb AnyKernel
 cd AnyKernel
 date=$(date "+%Y-%m-%d")
 zip -r9 Azrael-Test-OSS-"${BRANCH}"-KERNEL-"${CODENAME}"-"${DATE}".zip ./*
-    curl --upload-file "Azrael-Test-OSS-"${BRANCH}"-KERNEL-"${CODENAME}"-"${DATE}.zip" 
+    curl --upload-file "Azrael-Test-OSS-"${BRANCH}"-KERNEL-"${CODENAME}"-"${DATE}.zip"" 
 }
 compile
 zupload
