@@ -10844,7 +10844,7 @@ static inline void calculate_imbalance(struct lb_env *env, struct sd_lb_stats *s
 		(env->idle == CPU_NEWLY_IDLE ||
 		local->sum_nr_running < local->group_weight)) {
 		env->imbalance = max_t(long, env->imbalance,
-				     busiest->group_misfit_task);
+				     busiest->group_misfit_task_load);
 	}
 	/*
 	 * if *imbalance is less than the average load per runnable task
