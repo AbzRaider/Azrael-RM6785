@@ -77,14 +77,14 @@
 #define TIME_3MS  3000000
 #define TIME_2MS  2000000
 #define TIME_1MS  1000000
-#define TARGET_UNLIMITED_FPS 91
-#define TARGET_DEFAULT_FPS 90
+#define TARGET_UNLIMITED_FPS 240
+#define TARGET_DEFAULT_FPS 60
 #define FBTCPU_SEC_DIVIDER 1000000000
 #define NSEC_PER_HUSEC 100000
-#define BIG_CAP 92
-#define TIME_MS_TO_NS  1200000ULL
-#define MAX_DEP_NUM 32
-#define LOADING_WEIGHT 60
+#define BIG_CAP 95
+#define TIME_MS_TO_NS  1000000ULL
+#define MAX_DEP_NUM 30
+#define LOADING_WEIGHT 50
 #define DEF_RESCUE_PERCENT 33
 #define DEF_RESCUE_NS_TH 0
 #define INVALID_NUM -1
@@ -158,7 +158,7 @@ static int loading_time_diff;
 static int adjust_loading;
 static int rescue_percent_90;
 static int rescue_percent_120;
-static int fps_level_range=90;
+static int fps_level_range;
 static int check_running;
 
 module_param(bhr, int, 0644);
@@ -201,12 +201,12 @@ static int bypass_flag;
 static int set_idleprefer;
 static int suppress_ceiling;
 static int boost_ta;
-static int down_throttle_ns=-1;
-static int fbt_down_throttle_enable=0;
+static int down_throttle_ns;
+static int fbt_down_throttle_enable;
 static int sync_flag;
 static int fbt_sync_flag_enable;
-static int set_cap_margin=92;
-static int fbt_cap_margin_enable=1;
+static int set_cap_margin;
+static int fbt_cap_margin_enable;
 static int ultra_rescue;
 static int loading_policy;
 static int llf_task_policy;
