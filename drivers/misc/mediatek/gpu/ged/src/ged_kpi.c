@@ -241,8 +241,8 @@ static struct GED_KPI_MEOW_DVFS_FREQ_PRED *g_psMEOW;
 #define SCREEN_IDLE_PERIOD 500000000
 
 /* static int display_fps = GED_KPI_MAX_FPS; */
-static int is_game_control_frame_rate;
-static int target_fps_4_main_head = 60;
+static int is_game_control_frame_rate=1;
+static int target_fps_4_main_head = 90;
 static long long vsync_period = GED_KPI_SEC_DIVIDER / GED_KPI_MAX_FPS;
 static GED_LOG_BUF_HANDLE ghLogBuf_KPI;
 static struct workqueue_struct *g_psWorkQueue;
@@ -258,11 +258,11 @@ static unsigned int gx_dfps; /* variable to fix FPS*/
 static unsigned int gx_frc_mode; /* variable to fix FRC mode*/
 
 #ifdef GED_KPI_CPU_BOOST
-static unsigned int enable_cpu_boost = 1;
+static unsigned int enable_cpu_boost = -1;
 #endif /* GED_KPI_CPU_BOOST */
 static unsigned int enable_gpu_boost = 1;
 static unsigned int is_GED_KPI_enabled = 1;
-static unsigned int ap_self_frc_detection_rate = 20;
+static unsigned int ap_self_frc_detection_rate = 30;
 #ifdef GED_ENABLE_FB_DVFS
 static unsigned int g_force_gpu_dvfs_fallback;
 static int g_fb_dvfs_threshold = 80;
@@ -296,12 +296,12 @@ static unsigned long long g_CRemTimeAccu; /*g_cpu_remained_time_accum*/
 static unsigned long long g_gpu_freq_accum;
 static unsigned int g_frame_count;
 
-static int gx_game_mode;
+static int gx_game_mode=0;
 static int gx_boost_on;
 #ifdef GED_KPI_CPU_BOOST
-static int gx_force_cpu_boost;
+static int gx_force_cpu_boost=1;
 static int gx_top_app_pid;
-static int enable_game_self_frc_detect;
+static int enable_game_self_frc_detect=1;
 #endif /* GED_KPI_CPU_BOOST */
 static unsigned int gx_fps;
 static unsigned int gx_cpu_time_avg;
@@ -314,7 +314,7 @@ static unsigned int gx_gpu_freq_avg;
 #ifdef GED_KPI_CPU_BOOST
 static int boost_accum_cpu;
 /* for non-GED_KPI_MAX_FPS-FPS cases */
-static long target_t_cpu_remained = 16000000;
+static long target_t_cpu_remained = 14100000;
 /* static long target_t_cpu_remained_min = 8300000; */
 /* default 0.5 vsync period */
 static int cpu_boost_policy;
