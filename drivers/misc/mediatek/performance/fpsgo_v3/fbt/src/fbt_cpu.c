@@ -77,8 +77,8 @@
 #define TIME_3MS  3000000
 #define TIME_2MS  2000000
 #define TIME_1MS  1000000
-#define TARGET_UNLIMITED_FPS 240
-#define TARGET_DEFAULT_FPS 60
+#define TARGET_UNLIMITED_FPS 91
+#define TARGET_DEFAULT_FPS 90
 #define FBTCPU_SEC_DIVIDER 1000000000
 #define NSEC_PER_HUSEC 100000
 #define BIG_CAP 95
@@ -150,15 +150,15 @@ static int variance;
 static int floor_bound;
 static int kmin;
 static int floor_opp;
-static int loading_th;
+static int loading_th=15;
 static int sampling_period_MS;
 static int loading_adj_cnt;
 static int loading_debnc_cnt;
 static int loading_time_diff;
-static int adjust_loading;
+static int adjust_loading=100;
 static int rescue_percent_90;
 static int rescue_percent_120;
-static int fps_level_range;
+static int fps_level_range=90;
 static int check_running;
 
 module_param(bhr, int, 0644);
@@ -195,21 +195,21 @@ static DEFINE_MUTEX(blc_mlock);
 static struct list_head loading_list;
 static struct list_head blc_list;
 
-static int fbt_enable;
-static int fbt_idleprefer_enable;
+static int fbt_enable=1;
+static int fbt_idleprefer_enable=1;
 static int bypass_flag;
-static int set_idleprefer;
+static int set_idleprefer=1;
 static int suppress_ceiling;
 static int boost_ta;
-static int down_throttle_ns;
-static int fbt_down_throttle_enable;
+static int down_throttle_ns=-1;
+static int fbt_down_throttle_enable=-1;
 static int sync_flag;
 static int fbt_sync_flag_enable;
-static int set_cap_margin;
-static int fbt_cap_margin_enable;
+static int set_cap_margin=95;
+static int fbt_cap_margin_enable=1;
 static int ultra_rescue;
-static int loading_policy;
-static int llf_task_policy;
+static int loading_policy=100;
+static int llf_task_policy=25;
 static int set_isolation;
 
 static int cluster_num;
