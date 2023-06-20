@@ -5,6 +5,7 @@ mkdir clang && cd clang
 bash <(curl -s https://raw.githubusercontent.com/Neutron-Toolchains/antman/main/antman) -S=latest
 sudo apt install libelf-dev libarchive-tools
 bash <(curl -s https://raw.githubusercontent.com/Neutron-Toolchains/antman/main/antman) --patch=glibc
+cd ..
 }
 
 function compile() 
