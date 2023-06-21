@@ -898,10 +898,10 @@ static void set_tc_trigger_hw_protect
 
 
 	ts_name = tscpu_g_tc[tc_num].ts[d_index];
-
+#ifndef CONFIG_MTK_NO_THERMAL_PROTECT
 	/* temperature to trigger SPM state2 */
 	raw_high = temperature_to_raw_room(temperature, ts_name);
-
+#endif
 	temp = readl(offset + TEMPMONINT);
 	/* disable trigger SPM interrupt */
 	mt_reg_sync_writel(temp & 0x00000000, offset + TEMPMONINT);

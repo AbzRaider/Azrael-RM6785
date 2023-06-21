@@ -5,3 +5,9 @@ config MTK_THERMAL_PA_VIA_ATCMD
 	  to query modem RF temperature
 	  via AT command.
 	  (RIL sockets)
+
+config MTK_NO_THERMAL_PROTECT
+	bool "Disables Thermal Protect"
+	default n
+	help
+	  Enable this config to remove thermal throttle protect
